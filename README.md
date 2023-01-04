@@ -18,7 +18,7 @@ The classical dynamics (C.D.) and general relativity (G.R.) provided that the ef
 
 <img src="assets/F.svg" style="margin:auto;display:block" alt="eq:effective force">
 
-pluggin the intial value ``r_0`` and ``v_0``, we have the ODE
+pluggin the intial value $r_0$ and $v_0$, we have the ODE
 
 <img src="assets/ODE.svg" style="margin:auto;display:block" alt="eq:effective force">
 
