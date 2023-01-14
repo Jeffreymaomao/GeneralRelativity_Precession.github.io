@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>latex2math</title>
+
+	<link rel="stylesheet" href="mathquill-0.10.1/mathquill.css"/>
+
+	<script type="text/javascript" src="js/latex2math.js"></script>
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script src="mathquill-0.10.1/mathquill.js"></script>
+
+	<style type="text/css">
+		html,body{
+			text-align: center;
+			font-size: 20pt;
+		}
+		#input{
+			margin-top: 250px;
+		}
+		#LaTeX{
+			margin-top: 50px;
+			color: gray;
+		}
+		#output{
+			margin-top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div id="input">
+		<span id="math-field"></span>
+	</div>
+	<div id="LaTeX">
+		<span id="latex"></span>
+	</div>
+	<div id="output">
+		<span id="number"></span>
+	</div>
+	<!-- Perfect solution is to use 
+	import { ComputeEngine } from 'https://unpkg.com/@cortex-js/compute-engine?module';
+	However, this is not necessary.
+	 -->
+	<script>
+		var n;
+		var mathFieldSpan = document.getElementById('math-field');
+		var latexSpan = document.getElementById('latex');
+		var number = document.getElementById('number');
+
+		var MQ = MathQuill.getInterface(2);
+		var mathField = MQ.MathField(mathFieldSpan, {
+			handlers: {
+				edit: function() {
+					latexSpan.textContent = mathField.latex();
+					number.textContent = latex2math(mathField.latex());
+					n = number.textContent;
+				}
+			}
+		});
+
+</script>
+</body>
+</html>

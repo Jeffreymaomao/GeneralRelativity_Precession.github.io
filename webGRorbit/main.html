@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gerneral Relativity</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="mathquill-0.10.1/mathquill.css"/>
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Vpython -->
+    <script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery-ui.custom.min.js"></script>
+    <script type="text/javascript" src="https://www.glowscript.org/package/glow.3.2.min.js"></script>
+    <!-- MathQuill -->
+    <script type="text/javascript" src="js/latex2math.js"></script>
+    <script src="mathquill-0.10.1/mathquill.js"></script>
+    <!-- GR orbit -->
+    <script src="js/GeneralVector.js" type="text/javascript"></script>
+    <script src="js/RungeKutta.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript" defer></script>
+</head>
+
+<body>
+
+    <h1>General Relativity<br>Orbits near a compact body</h1>
+
+    <div id="glowscript" class="glowscript"></div>
+
+    <div id="ButtonSideBar">  
+        <h3>Animation Control</h3>
+            <div id="AnimationControl">
+                <div>
+                    <button id="RunningButton"><i id="run"></i></button>
+                </div>
+                <div>
+                    <button id="RestartButton"><i id="restart"></i></button>
+                </div>
+                
+            </div>
+        <h3>Interface Control</h3>
+            <div id="InterfaceControl">
+                <div>
+                    <select name="focus" id="">
+                        <option value="">focus: none</option>
+                        <option value="">focus: solar</option>
+                        <option value="">focus: planet</option>
+                    </select>
+                </div>
+                <div>
+                    <select name="view" id="">
+                        <option value="">view: x</option>
+                        <option value="">view: y</option>
+                        <option value="">view: z</option>
+                    </select>
+                </div>
+                <div class="check">
+                    <input type="checkbox" id="ScrollCheckBox" onchange="AnimationScroll()"/>
+                    <label>User Scroll</label>
+                </div>
+                <div class="check">
+                    <input type="checkbox" id="AxisCheckBox" onchange="AnimationAxis()"/>
+                    <label>Show Axis</label>
+                </div>
+                <div class="check">
+                    <input type="checkbox" id="TextureCheckBox" onchange="AnimationTexture()"/>
+                    <label>Texture</label>
+                </div>
+            </div>
+        <h3>Intial value Control</h3>
+            <div id="InitialValue">
+                <div id="InitialMass">
+                    <span id="M0">M_0 = </span>
+                    <span id="M0input">1</span>
+                    <span id="M0unit">\left(M{\odot}\right)</span>
+                </div>
+                <div id="InitialRadius">
+                    <span id="R0">r_0 = </span>
+                    <span id="R0input">0.3074</span>
+                    <span id="R0unit">\left(\mathrm{AU}\right)</span>
+                </div>
+                <div id="InitialVelocity">
+                    <span id="V0">v_0 = </span>
+                    <span id="V0input">0.0340</span>
+                    <span id="V0unit">\left(\mathrm{AU/day}\right)</span>
+                </div>
+                <div id="TimeInterval">
+                    <span id="dt">dt = </span>
+                    <span id="dtinput">0.001</span>
+                    <span id="dtunit">\left(\mathrm{AU/day}\right)</span>
+                </div>
+                <div>
+                    <select name="InitialValueReference" id="InitialValueReference" onchange="changeRef()">
+                        <option value="none">reference: none</option>
+                        <option value="suggestion">reference: suggestion orbit</option>
+                        <option value="mercury">reference: Mercury orbit</option>
+                        <option value="s0">reference: S0 orbit</option>
+                    </select>
+                </div>
+            </div>
+        <h3>Stop Whole Processes</h3>
+            <div id="StopWholeProcesses">
+                <div>
+                    <button id="StopButton"><i id="stop"></i></button>
+                </div>
+            </div>
+    </div>
+    
+</body>
+
+</html>
