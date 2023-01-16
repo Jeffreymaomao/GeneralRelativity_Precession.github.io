@@ -37,6 +37,14 @@ h1 {
     color: white;
     z-index: 50;
 }
+.Title{
+    transform: translate(-50%,-100px);
+    transition-duration: 500ms;
+}
+.TitleToogle{
+    transform: translate(-50%,0px);
+    transition-duration: 500ms;
+}
 
 html,
 body {

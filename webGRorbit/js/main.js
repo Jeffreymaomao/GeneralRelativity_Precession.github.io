@@ -201,6 +201,7 @@ var Spheres = {
         };
     },
     StartInit: function(){
+        // this.texture = true;
         this.texture = true;
         this.Planet.__trail_object.__trail.emissive = true;
         this.Planet.clear_trail();
@@ -320,6 +321,10 @@ CAN NOT WRITE IN THE OBJECT HRUNCTION
 NEED TO WRITE IT IN LAST PART OF THE main().
 */
 // Controllers.init();
+
+var Title = document.getElementsByClassName("Title")[0];
+var ShowTitle = document.getElementById("ShowTitle");
+
 var SideBar = document.getElementById("SideBar");
 var SideBarIcon = document.getElementById("SideBarIcon");
 
@@ -330,6 +335,10 @@ var StopButton = document.getElementById("StopButton")
 var AxisCheckBox = document.getElementById("AxisCheckBox")
 var TextureCheckBox = document.getElementById("TextureCheckBox")
 var ScrollCheckBox = document.getElementById("ScrollCheckBox")
+
+ShowTitle.addEventListener("click",function() {
+    Title.classList.toggle("TitleToogle");
+});
 
 SideBarIcon.addEventListener("click",function() {
     SideBar.classList.toggle("SideBarToogle");
