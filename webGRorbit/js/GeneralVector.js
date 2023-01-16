@@ -22,7 +22,10 @@
         this.vz = vz; // velocity z
 
     }
-
+    // transfer vec6 to string then expand
+    vec6.prototype.expand = function () {
+        return "{ \n px = "+ this.px +",\n py = "+ + this.py + ",\n pz = " + this.pz + ",\n vx = " + this.vx + ",\n vy = " + this.vy + ",\n vz = " + this.vz + "\n}"
+    };
     // transfer vec6 to string
     vec6.prototype.toString = function () {
         return "vec6 ( " + this.px + ", " + this.py + ", " + this.pz + ", " + this.vx + ", " + this.vy + ", " + this.vz + " )"
