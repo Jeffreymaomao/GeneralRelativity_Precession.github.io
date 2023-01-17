@@ -1,41 +1,14 @@
 # General Relativty <br> Orbit near a compact body
-<style>
-#start{
-    text-decoration: none;
-    padding: 10px 50px;
-    text-align: center;
-    border-radius: 12px;
-    background-color: rgba(220, 0, 10, 0.6);
-    color: white;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4) inset,
-                -2px -2px 5px rgba(0, 0, 0, 0.4) inset,
-                1px 1px 2px rgba(0, 0, 0, 0.2),
-                -1px -1px 2px rgba(0, 0, 0, 0.2);
-    transition-duration: 500ms;
-}
-#start:hover{
-    background-color: rgba(200, 0, 10, 0.8);
-    color: white;
-    transition-duration: 500ms;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4) inset,
-                -1px -1px 5px rgba(0, 0, 0, 0.4) inset,
-                1px 1px 2px rgba(0, 0, 0, 0.2),
-                -1px -1px 2px rgba(0, 0, 0, 0.2);
-    
-}
-</style>
+
 
 <div style="font-size:10pt;">
 author：Chang Mao Yang (楊長茂)<br>
 </div>
 
-<div style="padding: 20px">
-<center>
-    <a id="start" href="https://jeffreymaomao.github.io/General_Relativity_Precession.github.io/webGRorbit/main.html">
-    START
-    </a>
-</center>
-</div>
+link: <a id="start" href="https://jeffreymaomao.github.io/General_Relativity_Precession.github.io/webGRorbit/main.html">
+https://jeffreymaomao.github.io/General_Relativity_Precession.github.io/webGRorbit/main.html
+</a>
+
 
 ## User Interface
 Note: need a little time to load the texture.
