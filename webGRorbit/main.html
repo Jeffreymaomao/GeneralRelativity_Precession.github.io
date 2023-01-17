@@ -4,9 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Gerneral Relativity</title>
-    <!-- Document at 
-        /Users/apple/Desktop/中正大學/三年級第一學期/基礎物理實驗ㄧ/VPython/html/webGRorbit/main.html 
-    -->
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     
@@ -51,7 +48,8 @@
             <h3>Interface Control</h3>
                 <div id="InterfaceControl">
                     <div>
-                        <select name="CameraFocus" id="CameraFocus" onchange="changeFocus()">
+                        <!-- <select name="CameraFocus" id="CameraFocus" onchange="changeFocus()"> -->
+                        <select name="CameraFocus" id="CameraFocus">
                             <option value="none">focus: none</option>
                             <option value="solar" selected="selected">focus: solar</option>
                             <option value="planet">focus: planet</option>
@@ -78,7 +76,7 @@
                         <label>Texture</label>
                     </div>
                     <div class="check">
-                        <input type="checkbox" id="ShowTitle"/>
+                        <input type="checkbox" id="TitleCheckBox"/>
                         <label>Show Title</label>
                     </div>
                 </div>
@@ -105,7 +103,8 @@
                         <span id="dtunit">\left(\mathrm{AU/day}\right)</span>
                     </div>
                     <div>
-                        <select name="InitialValueReference" id="InitialValueReference" onchange="changeRef()">
+                        <!-- <select name="InitialValueReference" id="InitialValueReference" onchange="changeRef()"> -->
+                        <select name="InitialValueReference" id="InitialValueReference">
                             <option value="none">reference: none</option>
                             <option value="suggestion">reference: suggestion orbit</option>
                             <option value="mercury" selected="selected">reference: Mercury orbit</option>
@@ -115,7 +114,8 @@
                 </div>
             <h3>Numerical Method</h3>
                 <div>
-                    <select name="IterationMethod" id="IterationMethod" onchange="changeRK()">
+                    <!-- <select name="IterationMethod" id="IterationMethod" onchange="changeRK()"> -->
+                    <select name="IterationMethod" id="IterationMethod"">
                         <option value="RK1_Euler">RK1: Forward Euler</option>
                         <option value="RK2_Explicit">RK2: Explicit midpoint method</option>
                         <option value="RK2_Heun">RK2: Heun's method</option>

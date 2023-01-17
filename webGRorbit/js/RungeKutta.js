@@ -1,30 +1,39 @@
-// ==JavaScript function==
-// @name            Runge Kutta methos
-// @author          Yange Chang Mao
-// @description     This is a bunch of Runge Kutta methos,
-// @refference      https://en.wikipedia.org/wiki/List_of_Runge–Kutta_methods  
-// @arguments
-//     1. f: function for y' = f(t,y)
-//     2. t: time 
-//     3. y: vector (NEED addistion: y.add() / multiplication: y.multiply())
-//     4. h: time step
-// ==/JavaScript function==
-//-------------------------------------------------------
+
+
+/*
+ * ==JavaScript function==
+ * @name            Runge Kutta methos
+ * @author          Yange Chang Mao
+ * @description     This is a bunch of Runge Kutta methods, using Javascript function.
+ * @refference      https://en.wikipedia.org/wiki/List_of_Runge–Kutta_methods  
+ * @arguments
+ *      1. f: function for y' = f(t,y)
+ *      2. t: time 
+ *      3. y: vector:
+ *          i.  addistion: y.add()
+ *          ii. multiplication: y.multiply())
+ *      4. h: time step
+ * ==/JavaScript function==
+ */
+
+/* ------------------------------------------------- */
 var RK1 = RK1_Euler
 var RK2 = RK2_Explicit
 var RK3 = RK3_Kutta
 var RK4 = RK4_Classical
-// RK1: Euler
-// RK2: Explicit, Heun, Ralston
-// RK3: Kutta, Heun, Wray, Ralston, SSP
-// RK4: Classical, 38rule, Ralston
-//-------------------------------------------------------
+/*
+ * RK1: Euler
+ * RK2: Explicit, Heun, Ralston
+ * RK3: Kutta, Heun, Wray, Ralston, SSP
+ * RK4: Classical, 38rule, Ralston
+*/
+/* ------------------------------------------------- */
 function RK1_Euler (f, t, y, h) {
     /* Euler method */
     var Y = y.add(f(t,y).multiply(h))
     return Y;
 }
-//-------------------------------------------------------
+/* ------------------------------------------------- */
 function RK2_Explicit (f, t, y, h) {
     /* Heun's method */
     var b1=0, b2=1
@@ -57,7 +66,7 @@ function RK2_Ralston (f, t, y, h) {
     var Y = y.add(f1.multiply(h * b1).add(f2.multiply(h * b2)))
     return Y;
 }
-//-------------------------------------------------------
+/* ------------------------------------------------- */
 function RK3_Kutta (f, t, y, h) {
     /* Kutta's third-order method */
     var b1=1/6, b2=2/3, b3=1/6
@@ -123,7 +132,7 @@ function RK3_SSP (f, t, y, h) {
     return Y;
 }
 
-//-------------------------------------------------------
+/* ------------------------------------------------- */
 function RK4_Classical (f, t, y, h) {
     /* Classical fourth-order method */
     var b1=1/6, b2=1/3, b3=1/3, b4=1/6
@@ -171,7 +180,7 @@ function RK4_Ralston (f, t, y, h) {
     var Y = y.add(f1.multiply(h * b1).add(f2.multiply(h * b2).add(f3.multiply(h * b3).add(f4.multiply(h * b4)))))
     return Y;
 }
-//-------------------------------------------------------
+/* ------------------------------------------------- */
 
 
 

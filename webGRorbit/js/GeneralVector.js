@@ -1,14 +1,30 @@
-//====================================================================================
-// define the constructor method of generalized vector
-//====================================================================================
-// testing for the general vector
-//var v1 = new vec6(0, 1, 1, 2, 3, 4)
-//var v2 = new vec6(3, 5, 8, 9, 0, 1)
-//console.log("v1 =", v1.toString())
-//console.log("v2 =", v2.toString())
-//console.log("v1.position =", v1.position.toString())
-//console.log("v1.velocity =", v1.velocity.toString())
-//console.log("v1+v2 =", v1.add(v2).toString())
+/*
+ * ==UserScript==
+ * ------------------------------------------------
+ * @name            Runge Kutta methos
+ * @author          Yange Chang Mao
+ * @description     This is a UserScript to generate a 6 dimension vector, in Physics it's actually a vector in phase space.
+ * @refference      Classical Dynamics, glowscript vector
+ * ------------------------------------------------
+ * @Usage
+ *      1. new vector: 
+ *          i.  var v1 = new vec6(0, 1, 1, 2, 3, 4);
+ *          ii. var v2 = new vec6(3, 5, 8, 9, 0, 1);
+ *      2. String:
+ *          i.  v1.toString()
+ *          ii. v1.expand()
+ *      3. operation:
+ *          i.      addtion:        v1.add(v2)
+ *          ii.     subtract:       v1.sub(v2)
+ *          iii.    multiplication: v1.nultiply(float)
+ *          iv.     divide:         v1.divide(float)
+ *          v.      inner product:  v1.dot(v2)
+ *          vi.     magnitude:      v1.mag()
+ *      4. transfer in to position and velocity (NEED TO SCRIPT GLOWSCRIPT vec/vector)
+ *          i.      position:       v1.position()
+ *          ii.     velocity:       v1.velocity()
+ * ==/UserScript==
+ */
 
 (function () {
     "use strict";
@@ -21,7 +37,7 @@
         this.vy = vy; // velocity y
         this.vz = vz; // velocity z
 
-    }
+    };
     // transfer vec6 to string then expand
     vec6.prototype.expand = function () {
         return "{ \n px = "+ this.px +",\n py = "+ + this.py + ",\n pz = " + this.pz + ",\n vx = " + this.vx + ",\n vy = " + this.vy + ",\n vz = " + this.vz + "\n}"
@@ -139,82 +155,82 @@
     vec6.prototype["-"] = vec6.prototype.sub;
     vec6.prototype["*"] = vec6.prototype.multiply;
     vec6.prototype["/"] = function (r) {
-        return this.divide(r)
+        return this.divide(r);
     };
     vec6.prototype["**"] = function (r) {
-        power_error()
+        power_error();
     };
     vec6.prototype["-u"] = function () {
-        return new vec6(-this.xp, -this.py, -this.pz, -this.vx, -this.vy, -this.vz)
+        return new vec6(-this.xp, -this.py, -this.pz, -this.vx, -this.vy, -this.vz);
     };
     vec6.prototype[">"] = function (r) {
-        greater_error()
+        greater_error();
     };
     vec6.prototype["<"] = function (r) {
-        less_error()
+        less_error();
     };
     vec6.prototype[">="] = function (r) {
-        greaterorequal_error()
+        greaterorequal_error();
     };
     vec6.prototype["<="] = function (r) {
-        lessorequal_error()
+        lessorequal_error();
     };
 
 
     function add_scalar_error() {
-        throw new Error("Cannot add a scalar and a vector.")
+        throw new Error("Cannot add a scalar and a vector.");
     }
 
     function add_vec_error() {
-        throw new Error("Cannot add a 6d vector and a 3d vector.")
+        throw new Error("Cannot add a 6d vector and a 3d vector.");
     }
 
     function sub_scalar_error() {
-        throw new Error("Cannot subtract a scalar and a vector.")
+        throw new Error("Cannot subtract a scalar and a vector.");
     }
 
     function sub_vec_error() {
-        throw new Error("Cannot subtract a 6d vector and a 3d vector.")
+        throw new Error("Cannot subtract a 6d vector and a 3d vector.");
     }
 
     function multiply_error() {
-        throw new Error("Cannot multiply a vector by a vector.")
+        throw new Error("Cannot multiply a vector by a vector.");
     }
 
     function divide_error() {
-        throw new Error("Cannot divide by a vector.")
+        throw new Error("Cannot divide by a vector.");
     }
 
     function power_error() {
-        throw new Error("Cannot raise a vector to a power.")
+        throw new Error("Cannot raise a vector to a power.");
     }
 
     function num_power_error() {
-        throw new Error("Cannot raise a number to a power that is a vector.")
+        throw new Error("Cannot raise a number to a power that is a vector.");
     }
 
     function greater_error() {
-        throw new Error("Cannot use > with vectors.")
+        throw new Error("Cannot use > with vectors.");
     }
 
     function less_error() {
-        throw new Error("Cannot use < with vectors.")
+        throw new Error("Cannot use < with vectors.");
     }
 
     function greaterorequal_error() {
-        throw new Error("Cannot use >= with vectors.")
+        throw new Error("Cannot use >= with vectors.");
     }
 
     function lessorequal_error() {
-        throw new Error("Cannot use <= with vectors.")
+        throw new Error("Cannot use <= with vectors.");
     }
 
     function Badnumber(r) {
         if (r === undefined) throw new Error("A variable is undefined.");
-        else throw new Error("A variable is 'NaN', not a number.")
+        else throw new Error("A variable is 'NaN', not a number.");
     }
     Export({
-        vec6: vec6
+        vec6: vec6,
     })
 })();
 
